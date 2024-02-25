@@ -1,0 +1,75 @@
+Description
+Richard Castle wants to buy a shirt. As he is very lazy, he decided to buy the shirt online. He chooses a shirt on Flipkart and is surprised to see the same shirt on Snapdeal, and Amazon as well. So he decided to buy the shirt from the website which offers the least price. The price of the shirt, the discount percentage, and the shipping charges of all three websites have been given as input. Help him in calculating the price of the shirt on each website and decide which website has the lowest price.If the price in all the three websites are same then first priority goes to Flipkart, then Snapdeal and finally Amazon.
+Input Format
+Input consists of 9 integers. The first three input corresponds to Flipkart details such as the price of the shirt, discount offered, and shipping charges. The next three input corresponds to Snapdeal details such as the price of the shirt, discount offered, and shipping charge. The last three input corresponds to Amazon details such as the price of the shirt, discount offered, and shipping charge.
+Output Format
+The Output consists of three integers that denote the prices on Flipkart, Snapdeal, and Amazon and should suggest the website that has the lowest price.
+Sample Input
+1000
+50
+50
+900
+50
+70
+800
+10
+200
+Sample Output
+In Flipkart: Rs.550
+In Snapdeal: Rs.520
+In Amazon: Rs.920
+Choose Snapdeal
+Case 1
+Case 2
+Input (stdin)
+1000
+50
+50
+900
+50
+70
+800
+10
+200
+Output (stdout)
+In Flipkart: Rs.550
+In Snapdeal: Rs.520
+In Amazon: Rs.920
+Choose Snapdeal
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+#include <stdio.h>
+int main()
+{
+   int fp, fd, fs, sp, sd, ss, ap, ad, as, f, s, a, d, b;
+   scanf("%d %d %d %d %d %d %d %d %d", &fp, &fd, &fs, &sp, &sd, &ss, &ap, &ad, &as);
+   d = (fp * fd)/100;
+   f = fp - d + fs;
+   d = (sp * sd)/100;
+   s = sp - d + ss;
+   d = (ap * ad)/100;
+   a = ap - d + as;
+   printf("In Flipkart: Rs.%d\nIn Snapdeal: Rs.%d\nIn Amazon: Rs.%d",f, s, a);
+   if (f<s && f<a)
+   {
+	 b = f;
+     printf("\nChoose Flipkart");
+   }
+   else if(s<f && s<a)
+   {
+     b = s;
+     printf("\nChoose Snapdeal");
+   }
+   else if(a<f && a<s)
+   {
+     b = a;
+     printf("\nChoose Amazon");
+   }
+  else
+  {
+    b = f;
+    printf("\nChoose Flipkart");
+  }
+   return 0;
+}

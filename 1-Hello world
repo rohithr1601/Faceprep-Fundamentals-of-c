@@ -1,0 +1,17 @@
+Write a program to print "Hello, World!"
+
+
+Case 1
+Input (stdin)
+
+Output (stdout)
+"Hello, World!"
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+#include <stdio.h>
+int main()
+{
+   printf("\"Hello, World!\"");
+   return 0;
+}

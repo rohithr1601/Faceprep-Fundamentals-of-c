@@ -1,0 +1,16 @@
+Write a program to print the given sample output.
+Case 1
+Input (stdin)
+Output (stdout)
+Hello World
+Hello World
+
++++++++++++++++++++++++++++++++
+
+#include <stdio.h>
+int main()
+{
+   // Try out your code here
+   printf("Hello World\nHello World");
+   return 0;
+}

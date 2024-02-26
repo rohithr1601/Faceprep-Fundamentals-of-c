@@ -1,0 +1,44 @@
+Description
+Nikitha and Danny are close friends. They both are studying in the same school. Now they are on summer vacation. As they are bored, they ask their parents to take them to an exhibition. Nikitha and Danny play a game. In this game, there are three boxes with some number written on top. There is a treasure in one of the three boxes and it is present in the box with the second largest number on top. Also, to open the box, they need to decode the correct code of this box. The clue given to them to find the code is that it is the largest number that divides all three given numbers. So, now help Nikitha and Danny to decode the code.
+Input Format
+Input consists of three integers. The first input corresponds to the number of the first box. The second input corresponds to the number of the second box. The third input corresponds to the number of the third box.
+Output Format
+Refer to the sample output.
+Sample Input 1
+2
+4
+6
+Sample Output 1
+The treasure is in the box which has the number 4
+The code to open the box is 2
+Case 1
+Case 2
+Input (stdin)
+2
+4
+6
+Output (stdout)
+The treasure is in the box which has the number 4
+The code to open the box is 2
+
+++++++++++++++++++++++++++++++++++++++
+
+#include <stdio.h>
+int main()
+{
+    int a, b, c,h=1;
+  	scanf("%d %d %d",&a, &b, &c);
+  	printf("The treasure is in the box which has the number ");
+  	if((a>b) && (a<c) || (a<b) && (a>c))
+      printf("%d",a);
+  	else if((b>a) && (b<c) || (b<a) && (b>c))
+      printf("%d",b);
+  	else
+      printf("%d",c);
+  	printf("\nThe code to open the box is ");
+  	for(int i=1;i<=a || i<=b || i<=c;i++)
+      if(a%i==0 && b%i==0 && c%i==0)
+        h=i;
+  	printf("%d",h);
+   return 0;
+}

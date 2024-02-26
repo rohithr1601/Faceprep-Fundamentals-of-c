@@ -1,0 +1,39 @@
+Description
+Write a program to find the sum of digits of a number until the sum becomes a single digit.
+Input Format
+Input format consists of a number
+Output Format
+Output format consists of an integer
+Sample Input 0
+8945623
+Sample Output 0
+8
+Case 1
+Case 2
+Input (stdin)
+78945623
+Output (stdout)
+8
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+#include <stdio.h>
+int main()
+{
+   int n,l,s = 0, sl, sn = 0;
+   scanf("%d",&n);
+   while(n%10>0)
+   {
+     l = n%10;
+     s = s + l;
+     n = n/10;
+   }
+   while(s>0)
+   {
+     sl = s%10;
+     sn = sn + sl;
+     s = s/10;
+   }
+   printf("%d",sn);
+   return 0;
+}

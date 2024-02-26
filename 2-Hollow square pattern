@@ -1,0 +1,49 @@
+Description
+Write a program to print the hollow square pattern.
+Input Format
+Input consists of one integer that corresponds to the number of rows and columns.
+Output Format
+Output prints the hollow square pattern for the given number of rows and columns.
+Sample Input 1
+5
+Sample Output 1
+*****
+*  *
+*  *
+*  *
+*****
+Case 1
+Case 2
+Input (stdin)
+5
+Output (stdout)
+*****
+*   *
+*   *
+*   *
+*****
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+#include <stdio.h>
+int main()
+{
+   int n;
+   scanf("%d",&n);
+   for(int i=1;i<=n;i++)
+   {
+     for(int j=1;j<=n;j++)
+     {
+       if(i==1 || i==n || j==1 || j==n)
+       {
+         printf("*");
+       }
+       else
+       {
+         printf(" ");
+       }
+     }
+     printf("\n");
+   }
+   return 0;
+}

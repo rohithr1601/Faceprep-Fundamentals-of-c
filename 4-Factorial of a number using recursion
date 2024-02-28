@@ -1,0 +1,52 @@
+Write a program to compute the factorial of a number using recursion.
+
+
+
+Input Format
+
+Input consists of an integer.
+
+
+
+Output Format
+
+The output consists of an integer that corresponds to the factorial value.
+
+
+
+Sample Input 1
+
+5
+
+
+
+Sample Output 1
+
+The factorial of 5 is 120
+
+
+Case 1
+Case 2
+Input (stdin)
+5
+
+Output (stdout)
+The factorial of 5 is 120
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+#include <stdio.h>
+int fact(int n)
+{
+  if(n==0 || n==1)
+    return 1;
+  else
+    return n*fact(n-1);
+}
+int main()
+{
+  	int n;
+  	scanf("%d",&n);
+ 	printf("The factorial of %d is %d",n,fact(n));
+   return 0;
+}

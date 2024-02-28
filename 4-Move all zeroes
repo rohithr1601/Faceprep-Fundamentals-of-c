@@ -1,0 +1,86 @@
+Write a program to move all zeroes to the end of a given integer.
+
+
+
+Input Format
+
+The first line of input contains a number of test cases T.
+For each test case, the first line of input contains a single integer of 0's and 1's.
+
+
+Constraints
+
+1 ≤ T ≤ 10
+1 ≤ N ≤ 109
+
+
+Output Format
+
+The output contains a single-line integer value.
+
+
+
+Sample Input
+
+2
+
+1010101
+
+1000111
+
+
+
+Sample Output
+
+1111000
+
+1111000
+
+
+Case 1
+Case 2
+Input (stdin)
+2
+1010101
+1000111
+
+Output (stdout)
+1111000
+1111000
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+#include <stdio.h>
+int mov0(int n)
+{
+  int r=0;
+  int m =1;
+  while(n>0)
+  {
+    int l=n%10;
+    if(l!=0)
+    {
+      r = r*10 + l;
+    }
+    else {
+      m = m*10;
+    }
+    n = n/10;
+  }
+ 
+  r = r*m;
+  return r;
+}
+int main()
+{
+  	int t;
+  	scanf("%d",&t);
+  	for(int i=0;i<t;i++)
+    {
+      int n;
+      scanf("%d",&n);
+  	  int f = mov0(n);
+  	  printf("%d\n",f);
+    }
+   return 0;
+}

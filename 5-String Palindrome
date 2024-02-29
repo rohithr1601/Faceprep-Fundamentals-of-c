@@ -1,0 +1,58 @@
+Write a program to find whether the given string is a palindrome or not without using string library functions.
+
+Note: The string reads the same backward and forward.
+
+
+
+Input Format
+
+Input consists of 1 string.
+
+
+
+Output Format
+
+If the given string is a Palindrome display “Palindrome”, else display “Not a Palindrome”.
+
+
+
+Sample Input 0
+
+mam
+
+
+
+Sample Output 0
+
+﻿Palindrome
+
+
+Case 1
+Case 2
+Input (stdin)
+mam
+
+Output (stdout)
+Palindrome
+
+++++++++++++++++++++++++++++++++++++++++++++++
+
+#include <stdio.h>
+#include<string.h>
+int main()
+{
+  	char str[100];
+  	int p =1;
+  	scanf("%s",&str);
+  	int len = strlen(str);
+  	for(int i=0;i<len/2;i++)
+      if(str[i] != str[ len - i -1])
+        p = 0;
+ 	  else 
+        p = 1;
+   if(p==1)
+     printf("Palindrome");
+  else
+    printf("Not a Palindrome");
+   return 0;
+}

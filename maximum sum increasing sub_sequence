@@ -1,0 +1,102 @@
+Write a c program to find the maximum sum increasing sub_sequence in the given array.
+
+Input Format:
+
+Input consist of integers
+
+1st Input => Size of the array
+
+2nd Input => number of array elements
+
+Output Format:
+
+Output is an Integer
+
+Sample Input:
+
+5
+
+5 50 10 20 30
+
+Sample Output:
+
+60
+
+Description:
+
+Here Increasing sub-sequence are
+
+5 50
+
+10 20 30
+
+5+50= 55
+
+10+20+30=60. So 60 is greater than 55.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+#include<stdio.h>
+int main()
+{
+  //Type your code here
+	int n;
+    scanf("%d", &n);
+    int a[100], b[100], j = 0, m = 0, s = 0;
+    for (int i = 0; i < n; i++) 
+	{
+        scanf("%d", &a[i]);
+    }
+    for (int i = 0; i < n; i++) {
+        if (a[i] < a[i + 1]) 
+		{
+            s += a[i];
+        } 
+		else 
+		{
+            s += a[i];
+            b[j] = s;
+            j++;
+            s = 0;
+        }
+    }
+    b[j] = 0;
+	m = b[0];
+    for (int i = 0; b[i] != 0; i++) {
+        if (b[i] > m) 
+		{
+            m = b[i];
+        }
+    }
+    printf("%d", m);
+	return 0;
+}
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+#include <stdio.h>
+int ms(int a[], int n) {
+    int m = a[0], p = a[0], c = a[0];
+    for (int i = 1; i < n; i++) {
+        int b = a[i];
+        if (b > p) {
+            c += b;
+            if (c > m)
+                m = c;
+        } else {
+            c = b;
+        }
+        p = b;
+    }
+    return m;
+}
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    int a[n];
+    for (int i = 0; i < n; i++)
+        scanf("%d", &a[i]);
+    printf("%d\n", ms(a, n));
+    return 0;
+}

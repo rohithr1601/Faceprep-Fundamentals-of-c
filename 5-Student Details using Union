@@ -1,0 +1,78 @@
+Write a program to read and display student data using union.
+
+
+
+Input Format
+
+- The first character input consists of the grade of the student
+
+- The second character array input consists of the roll number of student
+
+- The third float input consists of the mark of the student
+
+- The fourth integer input consists of the fees for student
+
+
+
+Output Format
+
+Refer to the sample output
+
+
+
+Sample Input 0
+
+Grade is: A
+
+Rollno is: 15EC110
+
+Mark is: 78.98
+
+Fees paid is: 25000
+
+
+Case 1
+Case 2
+Input (stdin)
+A
+15EC110
+78.98
+25000
+
+Output (stdout)
+Grade is: A
+Rollno is: 15EC110
+Mark is: 78.98
+Fees paid is: 25000
+
++++++++++++++++++++++++++++++++++++++++++++++++++
+
+#include <stdio.h>
+struct marks
+{
+  char g;
+  char r[100];
+  float m;
+  int f;
+}s;
+int main()
+{
+  	scanf("%c",&s.g);
+  	scanf("%s",&s.r);
+  	scanf("%f",&s.m);
+  	scanf("%d",&s.f);
+  	
+  	printf("Grade is: %c\n", s.g);
+  	printf("Rollno is: %s\n",s.r);
+  	if(((int)s.m)*100 != (int)(s.m*100))
+    {
+  		printf("Mark is: %.2f\n",s.m);
+    }
+  	else
+    {
+     	 printf("Mark is: %d\n",(int)s.m);
+    }
+  	printf("Fees paid is: %d\n",s.f);
+
+   return 0;
+}

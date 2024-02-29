@@ -1,0 +1,57 @@
+Write a program to sort a string in ascending order. Note: Do not use inbuilt functions.
+
+
+
+Input Format
+
+The input consists of the string s in a single line.
+
+
+
+Output Format
+
+Display the sorted string in ascending order.
+
+
+
+Sample Input 0
+
+faceprep
+
+
+
+Sample Output 0
+
+﻿aceefppr
+
+
+Case 1
+Case 2
+Input (stdin)
+faceprep
+
+Output (stdout)
+aceefppr
+
+++++++++++++++++++++++++++++++++++++++++++++++
+
+#include <stdio.h>
+int main()
+{
+  	char s[100];
+  	scanf("%s",&s);
+  	for(int i=0;s[i] != '\0';i++)
+    {
+      for(int j=i+1;s[j] != '\0';j++)
+      {
+        if(s[i]>s[j])
+        {
+          char t = s[i];
+          s[i] = s[j];
+          s[j] = t;
+        }
+      }
+    }
+  	printf("%s",s);
+  	return 0;
+}
